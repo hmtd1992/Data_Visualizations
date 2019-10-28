@@ -35,7 +35,7 @@ def index():
     
     # Embed plot into HTML via Flask Render
     script, div = components(p)
-    server.start()
+    Server.start()
     return render_template("visualization.html", script=script, div=div)
 
 
