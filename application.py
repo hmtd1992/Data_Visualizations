@@ -1,8 +1,9 @@
 import pyodbc
-from bokeh.plotting import figure
+from bokeh.plotting import figure,output_server
 from bokeh.embed import components
 from flask import Flask, render_template
 app = Flask(__name__)
+output_server("Visualization Plots")
 
 # Index page
 @app.route('/')
