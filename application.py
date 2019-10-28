@@ -33,7 +33,6 @@ def index():
     p.square(x, y, size=12, color='navy', alpha=0.6)
     
     # Embed plot into HTML via Flask Render
-    app.run()
     script, div = components(p)
     return render_template("visualization.html", script=script, div=div)
 
