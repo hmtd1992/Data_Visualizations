@@ -2,7 +2,6 @@ import pyodbc
 from bokeh.plotting import figure
 from bokeh.embed import components
 from flask import Flask, render_template
-from bokeh.server.server import Server
 app = Flask(__name__)
 
 # Index page
@@ -35,7 +34,6 @@ def index():
     
     # Embed plot into HTML via Flask Render
     script, div = components(p)
-    Server.start()
     return render_template("visualization.html", script=script, div=div)
 
 
