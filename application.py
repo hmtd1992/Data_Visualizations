@@ -30,7 +30,7 @@ def index():
     p = figure(plot_width=600, plot_height=600,
                title='Sample Bokeh Graph',
                x_axis_label='X', y_axis_label='Y')
-    p.square(x, y, size=12, color='navy', alpha=0.6)
+    p.square([1,2,3,4,5], [2,3,4,5,6], size=12, color='navy', alpha=0.6)
     
     # Embed plot into HTML via Flask Render
     script, div = components(p)
