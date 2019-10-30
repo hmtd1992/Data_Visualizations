@@ -1,5 +1,5 @@
 import pyodbc
-from bokeh.plotting import figure
+from bokeh.plotting import figure,output_file
 from bokeh.embed import components
 from flask import Flask, render_template
 app = Flask(__name__)
@@ -31,7 +31,7 @@ def index():
                title='Sample Bokeh Graph',
                x_axis_label='X', y_axis_label='Y')
     p.square([1,2,3,4,5], [2,3,4,5,6], size=12, color='navy', alpha=0.6)
-    
+    output_file("visualization.html")
     # Embed plot into HTML via Flask Render
     script, div = components(p)
     return render_template("visualization.html", script=script, div=div)
